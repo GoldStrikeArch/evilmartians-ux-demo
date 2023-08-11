@@ -1,5 +1,11 @@
 <script lang="ts">
-  import Auth from "./lib/Auth.svelte";
+  import ContentPage from "./pages/ContentPage.svelte";
+  import AuthPage from "./pages/AuthPage.svelte";
+  import { isAuth } from "./stores";
 </script>
 
-<Auth />
+{#if $isAuth}
+  <ContentPage />
+{:else}
+  <AuthPage />
+{/if}
